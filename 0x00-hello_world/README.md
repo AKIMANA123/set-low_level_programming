@@ -9,3 +9,4 @@ This directory contains C programming exercises for the Hello World project.
 - 2-assembler: Script that generates the assembly code of a C file (creates .s file)
 - 4-puts.c: C program that prints exactly 'Programming is like building a multilingual puzzle' using puts
 - 5-printf.c: C program that prints 'with proper grammar, but the outcome is a piece of art,' using printf
+- 6-size.c: C program that prints the size of various types on the computer it is compiled and run on
