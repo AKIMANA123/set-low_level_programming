@@ -1,11 +1,6 @@
 # 0x00-hello_world
 
-## 0-preprocessor
-This script runs a C file through the preprocessor and saves the result into a file named `c`.
+This directory contains C programming exercises for the Hello World project.
 
-The C file name is taken from the environment variable `$CFILE`.
-
-Usage:
-```bash
-export CFILE=main.c
-./0-preprocessor
+## Files:
+- 0-preprocessor: Script that runs a C file through the preprocessor and saves the result to a file named `c`
