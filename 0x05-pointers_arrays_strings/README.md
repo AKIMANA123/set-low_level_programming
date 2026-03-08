@@ -7,3 +7,4 @@
 | `6-puts2.c` | Function that prints every other character of a string, starting with the first |
 | `7-puts_half.c` | Function that prints the second half of a string |
 | `8-print_array.c` | Function that prints n elements of an array of integers |
+| `9-strcpy.c` | Function that copies a string from src to dest, including null terminator |
