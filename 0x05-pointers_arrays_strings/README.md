@@ -1,2 +1,3 @@
 ... content ...
 | `1-swap.c` | Function that swaps the values of two integers using pointers |
+| `2-strlen.c` | Function that returns the length of a string |
