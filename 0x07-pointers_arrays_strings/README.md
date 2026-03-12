@@ -1,2 +1,3 @@
 ... content ...
 | `1-memcpy.c` | Function that copies n bytes from memory area src to memory area dest |
+| `2-strchr.c` | Function that locates a character in a string |
