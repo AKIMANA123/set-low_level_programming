@@ -1,2 +1,3 @@
 ... content ...
 | `1-strncat.c` | Function that concatenates two strings using at most n bytes from src |
+| `2-strncpy.c` | Function that copies a string with a maximum number of bytes (like strncpy) |
