@@ -4,3 +4,4 @@
 | `3-strcmp.c` | Function that compares two strings (like strcmp) |
 | `4-rev_array.c` | Function that reverses the content of an array of integers |
 | `5-string_toupper.c` | Function that converts all lowercase letters of a string to uppercase |
+| `6-cap_string.c` | Function that capitalizes all words of a string using specified separators |
