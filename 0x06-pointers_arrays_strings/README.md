@@ -3,3 +3,4 @@
 | `2-strncpy.c` | Function that copies a string with a maximum number of bytes (like strncpy) |
 | `3-strcmp.c` | Function that compares two strings (like strcmp) |
 | `4-rev_array.c` | Function that reverses the content of an array of integers |
+| `5-string_toupper.c` | Function that converts all lowercase letters of a string to uppercase |
