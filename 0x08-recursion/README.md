@@ -1,2 +1,3 @@
 ... content ...
 | `1-print_rev_recursion.c` | Function that prints a string in reverse using recursion |
+| `2-strlen_recursion.c` | Function that returns the length of a string using recursion |
