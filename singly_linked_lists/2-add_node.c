@@ -12,9 +12,14 @@
 list_t *add_node(list_t **head, const char *str)
 {
 list_t *new_node;
+unsigned int len = 0;
 
 if (head == NULL || str == NULL)
 return (NULL);
+
+/* Calculate length of the string manually */
+while (str[len] != '\0')
+len++;
 
 /* Allocate memory for new node */
 new_node = malloc(sizeof(list_t));
@@ -29,8 +34,8 @@ free(new_node);
 return (NULL);
 }
 
-/* Calculate length of the string */
-new_node->len = strlen(str);
+/* Store the length */
+new_node->len = len;
 
 /* Point new node to current head */
 new_node->next = *head;
