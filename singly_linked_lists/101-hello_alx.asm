@@ -1,5 +1,5 @@
 section .data
-    msg db "Hello, ALX", 10, 0   ; 10 is newline, 0 is null terminator
+    msg db "Hello, Holberton", 10, 0   ; 10 is newline, 0 is null terminator
 
 section .text
     extern printf               ; declare printf as external function
