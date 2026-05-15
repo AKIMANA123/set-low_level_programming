@@ -7,8 +7,8 @@
  * @s2: second string
  * @n: maximum number of bytes to take from s2
  *
- * Return: pointer to newly allocated space containing s1 + first n bytes of s2,
- * or NULL on failure
+ * Return: pointer to newly allocated space containing
+ * s1 + first n bytes of s2, or NULL on failure
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -25,7 +25,7 @@ s2 = "";
 while (s1[len1] != '\0')
 len1++;
 
-/* Calculate length of s2 (but limit to n) */
+/* Calculate length of s2 (but limited to n) */
 while (s2[len2] != '\0')
 len2++;
 
@@ -33,7 +33,7 @@ len2++;
 if (n >= len2)
 n = len2;
 
-/* Allocate memory for concatenated string (+1 for null terminator) */
+/* Allocate memory (+1 for null terminator) */
 concat = malloc((len1 + n + 1) * sizeof(char));
 if (concat == NULL)
 return (NULL);
