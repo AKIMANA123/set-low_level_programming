@@ -19,7 +19,7 @@ return (-1);
 
 temp = *head;
 
-/* Delete at beginning */
+/* Delete at beginning (index 0) */
 if (index == 0)
 {
 *head = (*head)->next;
@@ -39,7 +39,9 @@ temp = temp->next;
 if (temp == NULL)
 return (-1);
 
+/* Delete the node */
 prev->next = temp->next;
 free(temp);
+
 return (1);
 }
