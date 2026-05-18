@@ -16,29 +16,23 @@ listint_t *temp;
 if (head == NULL)
 return (NULL);
 
-/* Allocate memory for new node */
 new_node = malloc(sizeof(listint_t));
 if (new_node == NULL)
 return (NULL);
 
-/* Set the value and next pointer */
 new_node->n = n;
 new_node->next = NULL;
 
-/* If list is empty, make new node the head */
 if (*head == NULL)
 {
 *head = new_node;
 return (new_node);
 }
 
-/* Traverse to the end of the list */
 temp = *head;
 while (temp->next != NULL)
 temp = temp->next;
 
-/* Add new node at the end */
 temp->next = new_node;
-
 return (new_node);
 }

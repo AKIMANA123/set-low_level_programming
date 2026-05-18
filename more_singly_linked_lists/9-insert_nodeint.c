@@ -18,7 +18,6 @@ unsigned int i;
 if (head == NULL)
 return (NULL);
 
-/* Create the new node */
 new_node = malloc(sizeof(listint_t));
 if (new_node == NULL)
 return (NULL);
@@ -26,7 +25,6 @@ return (NULL);
 new_node->n = n;
 new_node->next = NULL;
 
-/* Insert at the beginning (index 0) */
 if (idx == 0)
 {
 new_node->next = *head;
@@ -34,7 +32,6 @@ new_node->next = *head;
 return (new_node);
 }
 
-/* Traverse to the node before the insertion point */
 temp = *head;
 for (i = 0; i < idx - 1; i++)
 {
@@ -46,7 +43,6 @@ return (NULL);
 temp = temp->next;
 }
 
-/* Insert the new node */
 new_node->next = temp->next;
 temp->next = new_node;
 
