@@ -2,6 +2,84 @@
 #include "lists.h"
 
 /**
+ * create_node - creates a new node
+ * @n: integer value for the node
+ *
+ * Return: pointer to new node, or NULL on failure
+ */
+static dlistint_t *create_node(int n)
+{
+dlistint_t *new_node;
+
+new_node = malloc(sizeof(dlistint_t));
+if (new_node == NULL)
+return (NULL);
+
+new_node->n = n;
+new_node->prev = NULL;
+new_node->next = NULL;
+
+return (new_node);
+}
+
+/**
+ * insert_at_head - inserts node at beginning of list
+ * @head: double pointer to head of list
+ * @new_node: node to insert
+ *
+ * Return: pointer to new node
+ */
+static dlistint_t *insert_at_head(dlistint_t **head, dlistint_t *new_node)
+{
+new_node->next = *head;
+if (*head != NULL)
+(*head)->prev = new_node;
+*head = new_node;
+
+return (new_node);
+}
+
+/**
+ * traverse_to_node - traverses to node at given index
+ * @head: pointer to head of list
+ * @idx: index to traverse to
+ *
+ * Return: pointer to node at index, or NULL if out of range
+ */
+static dlistint_t *traverse_to_node(dlistint_t *head, unsigned int idx)
+{
+unsigned int i;
+
+for (i = 0; i < idx; i++)
+{
+if (head == NULL)
+return (NULL);
+head = head->next;
+}
+return (head);
+}
+
+/**
+ * insert_after_node - inserts new node after given node
+ * @node: node to insert after
+ * @new_node: node to insert
+ *
+ * Return: pointer to new node
+ */
+static dlistint_t *insert_after_node(dlistint_t *node, dlistint_t *new_node)
+{
+new_node->next = node->next;
+new_node->prev = node;
+
+if (node->next != NULL)
+node->next->prev = new_node;
+
+node->next = new_node;
+
+return (new_node);
+}
+
+/**
  * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: double pointer to the head of the list
  * @idx: index where the new node should be added (starts at 0)
@@ -12,56 +90,24 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 dlistint_t *new_node;
-dlistint_t *current;
-unsigned int i;
+dlistint_t *target;
 
 if (h == NULL)
 return (NULL);
 
-new_node = malloc(sizeof(dlistint_t));
+new_node = create_node(n);
 if (new_node == NULL)
 return (NULL);
 
-new_node->n = n;
-
-/* Insert at beginning */
 if (idx == 0)
-{
-new_node->prev = NULL;
-new_node->next = *h;
-if (*h != NULL)
-(*h)->prev = new_node;
-*h = new_node;
-return (new_node);
-}
+return (insert_at_head(h, new_node));
 
-/* Traverse to the node before insertion point */
-current = *h;
-for (i = 0; i < idx - 1; i++)
-{
-if (current == NULL)
-{
-free(new_node);
-return (NULL);
-}
-current = current->next;
-}
-
-/* Check if we can insert */
-if (current == NULL)
+target = traverse_to_node(*h, idx - 1);
+if (target == NULL)
 {
 free(new_node);
 return (NULL);
 }
 
-/* Insert after current */
-new_node->next = current->next;
-new_node->prev = current;
-
-if (current->next != NULL)
-current->next->prev = new_node;
-
-current->next = new_node;
-
-return (new_node);
+return (insert_after_node(target, new_node));
 }
