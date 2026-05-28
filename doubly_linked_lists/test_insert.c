@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 int main(void)
@@ -14,6 +14,5 @@ printf("Inserted %d at index 0\n", node->n);
 else
 printf("Failed to insert\n");
 
-free_dlistint(head);
 return (0);
 }

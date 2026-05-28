@@ -15,24 +15,17 @@ dlistint_t *new_node;
 if (head == NULL)
 return (NULL);
 
-/* Allocate memory for new node */
 new_node = malloc(sizeof(dlistint_t));
 if (new_node == NULL)
 return (NULL);
 
-/* Set the value */
 new_node->n = n;
-
-/* Set new node's next to current head */
 new_node->next = *head;
 new_node->prev = NULL;
 
-/* If list is not empty, update current head's prev to new node */
 if (*head != NULL)
 (*head)->prev = new_node;
 
-/* Update head to point to new node */
 *head = new_node;
-
 return (new_node);
 }
